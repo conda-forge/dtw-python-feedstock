@@ -10,9 +10,11 @@ source:
   sha256: 0b2448b66c32f61d3d78d0f03d5c37c6a2fb09e1e917c4cd662aff507059af83
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 1
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: True  # [py<36]
+  entry_points:
+    - dtw = dtw.__main__:main
 
 requirements:
   build:
@@ -23,16 +25,21 @@ requirements:
     - python
     - pip
     - numpy >=1.14
-    - setuptools
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - scipy
-    - setuptools
 
 test:
   imports:
     - dtw
+  requires:
+    - pytest
+  source_files:
+    - tests
+  commands:
+    - pytest tests
+    - dtw --help
 
 about:
   home: https://dynamictimewarping.github.io/
