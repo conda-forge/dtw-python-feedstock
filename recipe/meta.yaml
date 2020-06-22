@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.1.4" %}
+{% set version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0b2448b66c32f61d3d78d0f03d5c37c6a2fb09e1e917c4cd662aff507059af83
+  sha256: c2a35058e51cc333ff4dfe5fa695db912daa116e903fbcce9935d884f614f0ac
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: True  # [py<36]
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  skip: true  # [py<36]
   entry_points:
     - dtw = dtw.__main__:main
 
@@ -46,7 +46,7 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE
-  summary: 'A comprehensive implementation of dynamic time warping (DTW) algorithms.'
+  summary: A comprehensive implementation of dynamic time warping (DTW) algorithms.
 
   description: |
     A comprehensive implementation of dynamic time warping (DTW)
