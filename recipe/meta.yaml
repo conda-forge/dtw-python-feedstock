@@ -21,6 +21,7 @@ requirements:
     - {{ compiler('c') }}
     - numpy
     - setuptools
+    - Cython
   host:
     - python
     - pip
