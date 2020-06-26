@@ -10,9 +10,9 @@ source:
   sha256: c2a35058e51cc333ff4dfe5fa695db912daa116e903fbcce9935d884f614f0ac
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [py<36]
+  skip: True  # [py<36 or python_impl == 'pypy']
   entry_points:
     - dtw = dtw.__main__:main
 
