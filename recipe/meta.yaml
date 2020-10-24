@@ -19,7 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - numpy
+    - numpy >=1.14
     - setuptools
   host:
     - python
