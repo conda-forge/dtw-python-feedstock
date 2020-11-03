@@ -10,7 +10,7 @@ source:
   sha256: 0947d5eed43bb6eec19325f294adf586defdd70b6ba4a49c2cf25408dcd59b87
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py<36 or python_impl == 'pypy']
   entry_points:
@@ -19,7 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - numpy
+    - numpy >=1.14
     - setuptools
   host:
     - python
