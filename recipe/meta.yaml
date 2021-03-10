@@ -24,9 +24,9 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - pip
-    - numpy
     - setuptools
+    - numpy
+    - pip
   run:
     - python
     - {{ pin_compatible('numpy') }}
