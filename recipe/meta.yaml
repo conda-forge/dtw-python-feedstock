@@ -22,12 +22,11 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - numpy >=1.14
     - setuptools
   host:
     - python
     - pip
-    - numpy >=1.14
+    - numpy
   run:
     - python
     - {{ pin_compatible('numpy') }}
