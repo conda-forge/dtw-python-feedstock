@@ -7,20 +7,13 @@ Package license: GPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/dtw-python-feedstock/blob/master/LICENSE.txt)
 
-Summary: A comprehensive implementation of dynamic time warping (DTW) algorithms.
+Summary: A comprehensive implementation of dynamic time warping (DTW) algorithms in Python.  DTW computes the optimal (least cumulative distance) alignment between points of two time series.  Common DTW variants covered include local (slope) and global (window) constraints, subsequence matches, arbitrary distance definitions, normalizations, minimum variance matching, and so on.  Provides cumulative distances, alignments, specialized plot styles, etc.
 
 Development: https://github.com/DynamicTimeWarping/dtw-python
 
 Documentation: https://dynamictimewarping.github.io/python/
 
-A comprehensive implementation of dynamic time warping (DTW)
-algorithms. DTW computes the optimal (least cumulative distance)
-alignment between points of two time series. Common DTW variants
-covered include local (slope) and global (window) constraints,
-subsequence matches, arbitrary distance definitions,
-normalizations, minimum variance matching, and so on. Provides
-cumulative distances, alignments, specialized plot styles, etc.
-
+DTW is a family of algorithms which compute the local stretch or compression to apply to the time axes of two timeseries in order to optimally map one (query) onto the other (reference). DTW outputs the remaining cumulative distance between the two and, if desired, the mapping itself (warping function). DTW is widely used for classification and clustering tasks, e.g. in bioinformatics, chemometrics, econometrics, and general timeseries mining.
 
 Current build status
 ====================
@@ -93,6 +86,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10087&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dtw-python-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.9.____cpythonpython_implcpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10087&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dtw-python-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_python3.9.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10087&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/dtw-python-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_python3.9.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
