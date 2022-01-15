@@ -20,14 +20,13 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
+    - cython
     - numpy >=1.19                           # [build_platform != target_platform]
     - {{ compiler('c') }}
     - setuptools
   host:
     - python
     - pip
-    - cython
     - numpy >=1.19
   run:
     - python
@@ -60,4 +59,3 @@ about:
 extra:
   recipe-maintainers:
     - tonigi
-
