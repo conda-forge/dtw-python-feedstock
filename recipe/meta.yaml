@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.1.14" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9ec1baa88ba007e565d2a182f3d82c78aa356c99f2aa03d949870899b783b994
+  sha256: 3095aafcdc7f0625df9eee301f1dbe02ad2d7671d8a9ce362c5c0245e3f3c3e3
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py<36 or python_impl == 'pypy']
   entry_points:
