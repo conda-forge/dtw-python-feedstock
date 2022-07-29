@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.1.14" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9ec1baa88ba007e565d2a182f3d82c78aa356c99f2aa03d949870899b783b994
+  sha256: 3095aafcdc7f0625df9eee301f1dbe02ad2d7671d8a9ce362c5c0245e3f3c3e3
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py<36 or python_impl == 'pypy']
   entry_points:
@@ -49,7 +49,7 @@ about:
   home: https://dynamictimewarping.github.io/
   license: GPL-3.0-or-later
   license_family: GPL
-  license_file: LICENSE
+  license_file: COPYING
   summary: A comprehensive implementation of dynamic time warping (DTW) algorithms in Python.  DTW computes the optimal (least cumulative distance) alignment between points of two time series.  Common DTW variants covered include local (slope) and global (window) constraints, subsequence matches, arbitrary distance definitions,
     normalizations, minimum variance matching, and so on.  Provides cumulative distances, alignments, specialized plot styles, etc.
   description: DTW is a family of algorithms which compute the local stretch or compression to apply to the time axes of two timeseries in order to optimally map one (query) onto the other (reference). DTW outputs the remaining cumulative distance between the two and, if desired, the mapping itself (warping function). DTW
