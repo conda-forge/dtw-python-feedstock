@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.2.2" %}
+{% set version = "1.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3095aafcdc7f0625df9eee301f1dbe02ad2d7671d8a9ce362c5c0245e3f3c3e3
+  sha256: 2285012dc92c4744b78683d82439b279fd759b1005e702b62d03cbaa044f532b
 
 build:
   number: 0
