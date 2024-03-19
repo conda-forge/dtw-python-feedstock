@@ -11,3 +11,5 @@ provider:
   linux_aarch64: default
   linux_ppc64le: travis
 test: native_and_emulated
+bot:
+  automerge: true
