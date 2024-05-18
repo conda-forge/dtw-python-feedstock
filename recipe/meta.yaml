@@ -1,16 +1,16 @@
 {% set name = "dtw-python" %}
-{% set version = "1.4.2" %}
+{% set version = "1.4.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 69df1335a70ed6b8abe00b21c2dd79fcc0d56c21998520a275f566a787d05d50
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 0439ac944e2d3d0f979afd44acfc3d4e726b167e01119d7421e71c552c57489c
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py<36 or python_impl == 'pypy']
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - cython
     - numpy >=1.19                           # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - setuptools
   host:
     - python
