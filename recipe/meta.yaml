@@ -10,7 +10,7 @@ source:
   sha256: 69df1335a70ed6b8abe00b21c2dd79fcc0d56c21998520a275f566a787d05d50
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [py<36 or python_impl == 'pypy']
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - cython
     - numpy >=1.19                           # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - setuptools
   host:
     - python
@@ -31,7 +32,6 @@ requirements:
     - numpy >=1.19
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - scipy
 
 test:
