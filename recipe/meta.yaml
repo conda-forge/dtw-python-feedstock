@@ -6,13 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 0439ac944e2d3d0f979afd44acfc3d4e726b167e01119d7421e71c552c57489c
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  #sha256: 0439ac944e2d3d0f979afd44acfc3d4e726b167e01119d7421e71c552c57489c
+  git_url: https://github.com/DynamicTimeWarping/dtw-python/tree/pyproject_toml
 
 build:
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [py<36 or python_impl == 'pypy']
+  skip: true  # [py<39 or python_impl == 'pypy']
   entry_points:
     - dtw = dtw.__main__:main
 
@@ -21,7 +22,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython
-    - numpy >=1.19                           # [build_platform != target_platform]
+    - numpy >=2.0.0rc1                           # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ stdlib("c") }}
@@ -30,8 +31,9 @@ requirements:
     - python
     - pip
     - cython
-    - numpy >=1.19
+    - numpy >=2.0.0rc1
   run:
+    - {{ pin_compatible('numpy') }}
     - python
     - scipy
 
