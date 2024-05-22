@@ -8,7 +8,7 @@ package:
 source:
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   #sha256: 0439ac944e2d3d0f979afd44acfc3d4e726b167e01119d7421e71c552c57489c
-  git_url: https://github.com/DynamicTimeWarping/dtw-python/
+  git_url: https://github.com/DynamicTimeWarping/dtw-python
   git_rev: pyproject_toml
 
 build:
