@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  skip: true  # [py<36 or python_impl == 'pypy']
+  skip: true  # [python_impl == 'pypy']
   entry_points:
     - dtw = dtw.__main__:main
 
@@ -30,11 +30,11 @@ requirements:
     - python
     - pip
     - cython
-    - numpy >=1.23.5
+    - numpy
   run:
     - python
     - scipy
-    - numpy >=1.23.5
+    - numpy
 
 # See https://github.com/conda-forge/yt-feedstock/blob/main/recipe/meta.yaml
 
