@@ -28,10 +28,10 @@ requirements:
     - python
     - pip
     - cython
-    - numpy
+    - numpy >=1.23.5
   run:
     - python
-    - numpy
+    - numpy >=1.23.5
     - scipy
 
 test:
