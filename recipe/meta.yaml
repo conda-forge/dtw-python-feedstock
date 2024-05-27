@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9bb0f462496b31eef62d0e8a585f4490d59b54fc15da62078e14d55d80072615
+  # sha256: 9bb0f462496b31eef62d0e8a585f4490d59b54fc15da62078e14d55d80072615
 
 build:
   number: 0
@@ -20,7 +20,8 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - setuptools
@@ -28,13 +29,13 @@ requirements:
     - python
     - pip
     - cython
-    - numpy >=1.23.5  # [py>=39]
-    - numpy           # [py<39]
+    - numpy >=1.23.5
   run:
     - python
     - scipy
-    - numpy >=1.23.5  # [py>=39]
-    - numpy           # [py<39]
+    - numpy >=1.23.5
+
+# See https://github.com/conda-forge/yt-feedstock/blob/main/recipe/meta.yaml
 
 test:
   imports:
