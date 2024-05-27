@@ -8,7 +8,7 @@ package:
 source:
   #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   git_url: https://github.com/DynamicTimeWarping/dtw-python.git
-  git_rev: master
+  git_rev: debug-ci
 
 build:
   number: 0
@@ -19,13 +19,13 @@ build:
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    # - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    # - cython                                 # [build_platform != target_platform]
+    # - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
-    - setuptools
+    # - setuptools
   host:
     - python
     - pip
