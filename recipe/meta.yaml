@@ -28,11 +28,13 @@ requirements:
     - python
     - pip
     - cython
-    - numpy >=1.23.5
+    - numpy >=1.23.5  # [py>=39]
+    - numpy           # [py<39]
   run:
     - python
-    - numpy >=1.23.5
     - scipy
+    - numpy >=1.23.5  # [py>=39]
+    - numpy           # [py<39]
 
 test:
   imports:
