@@ -6,9 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  git_url: https://github.com/DynamicTimeWarping/dtw-python.git
-  git_rev: debug-ci
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: b09b79683e66d54a723504dbc488971f31cc0d715031f03f0e28f4a037d49861
+  #git_url: https://github.com/DynamicTimeWarping/dtw-python.git
+  #git_rev: debug-ci
 
 build:
   number: 0
