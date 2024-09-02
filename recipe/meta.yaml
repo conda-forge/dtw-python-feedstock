@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b09b79683e66d54a723504dbc488971f31cc0d715031f03f0e28f4a037d49861
+  sha256: eac5ab8431e7a054746ea64fe0c7f5f853e1e467bab0c94967fc8b80e32cd276
   #git_url: https://github.com/DynamicTimeWarping/dtw-python.git
   #git_rev: debug-ci
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [python_impl == 'pypy']
   entry_points:
