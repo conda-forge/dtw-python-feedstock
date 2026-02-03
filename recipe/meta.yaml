@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.7.2" %}
+{% set version = "1.7.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: ad832a96067c9ddc104307abcc7ed3787fc627b71aa48dd2a6a7cf208dbec020
+  sha256: 92db3b13a1ffc36a489ee7889324b92a9664a92cd3f8c51e1a524c0277db1b91
   #git_url: https://github.com/DynamicTimeWarping/dtw-python.git
   #git_rev: debug-ci
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   skip: true  # [python_impl == 'pypy']
   entry_points:
@@ -57,10 +57,10 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file: COPYING
-  summary: A comprehensive implementation of dynamic time warping (DTW) algorithms in Python.  DTW computes the optimal (least cumulative distance) alignment between points of two time series.  Common DTW variants covered include local (slope) and global (window) constraints, subsequence matches, arbitrary distance definitions,
-    normalizations, minimum variance matching, and so on.  Provides cumulative distances, alignments, specialized plot styles, etc.
-  description: DTW is a family of algorithms which compute the local stretch or compression to apply to the time axes of two timeseries in order to optimally map one (query) onto the other (reference). DTW outputs the remaining cumulative distance between the two and, if desired, the mapping itself (warping function). DTW
-    is widely used for classification and clustering tasks, e.g. in bioinformatics, chemometrics, econometrics, and general timeseries mining.
+  summary: A comprehensive implementation of dynamic time warping (DTW) algorithms in Python.  DTW computes the optimal (least cumulative distance) alignment between points of two time series.  Common DTW variants covered include local (slope) and global (window) constraints, subsequence matches, arbitrary distance 
+    definitions, normalizations, minimum variance matching, and so on.  Provides cumulative distances, alignments, specialized plot styles, etc.
+  description: DTW is a family of algorithms which compute the local stretch or compression to apply to the time axes of two timeseries in order to optimally map one (query) onto the other (reference). DTW outputs the remaining cumulative distance between the two and, if desired, the mapping itself (warping function). 
+    DTW is widely used for classification and clustering tasks, e.g. in bioinformatics, chemometrics, econometrics, and general timeseries mining.
   doc_url: https://dynamictimewarping.github.io/python/
   dev_url: https://github.com/DynamicTimeWarping/dtw-python
 
