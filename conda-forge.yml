@@ -2,8 +2,9 @@ bot:
   automerge: true
 conda_build:
   pkg_format: '2'
-build_platform:
-  osx_arm64: osx_arm64
+provider:
+  osx_arm64: default
+  linux_aarch64: default
 conda_forge_output_validation: true
 github:
   branch_name: main
