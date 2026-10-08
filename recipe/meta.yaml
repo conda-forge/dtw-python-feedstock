@@ -23,20 +23,18 @@ requirements:
     - {{ compiler('c') }}
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - cython >=3.1                           # [build_platform != target_platform]
     - {{ stdlib("c") }}
     # - setuptools
   host:
     - python
     - pip
-    - cython
-    - numpy
-    - setuptools
+    - cython >=3.1
+    - setuptools >=77
   run:
     - python
     - scipy
-    - numpy
+    - numpy >=2.0
 
 # See https://github.com/conda-forge/yt-feedstock/blob/main/recipe/meta.yaml
 # https://conda-forge.org/docs/maintainer/knowledge_base/
