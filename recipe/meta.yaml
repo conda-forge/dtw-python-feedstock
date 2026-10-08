@@ -1,5 +1,5 @@
 {% set name = "dtw-python" %}
-{% set version = "1.8.1" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 3c555ba0b9fd6a51ae8669ccc3ee53d574b6faa7719eacb66401aca53c18ebda
+  sha256: 87d77605df6d59f55bf5fdfa1695db3a20f43e20edf8c9c54c61a53ccc56eef7
   #git_url: https://github.com/DynamicTimeWarping/dtw-python.git
   #git_rev: debug-ci
 
@@ -23,20 +23,18 @@ requirements:
     - {{ compiler('c') }}
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
-    - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - cython >=3.1                           # [build_platform != target_platform]
     - {{ stdlib("c") }}
     # - setuptools
   host:
     - python
     - pip
-    - cython
-    - numpy
-    - setuptools
+    - cython >=3.1
+    - setuptools >=77
   run:
     - python
     - scipy
-    - numpy
+    - numpy >=2.0
 
 # See https://github.com/conda-forge/yt-feedstock/blob/main/recipe/meta.yaml
 # https://conda-forge.org/docs/maintainer/knowledge_base/
